@@ -28,7 +28,7 @@ Finally, if you want to use a different i18n:
 
     //= require parsley.i18n.fr
 
-See complete [Parsley.js documentation](http://parsleyjs.org/documentation.html).
+See the complete [Parsley.js documentation](http://parsleyjs.org/documentation.html).
 
 ## Versions
 
