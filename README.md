@@ -30,6 +30,11 @@ Finally, if you want to use a different i18n:
 
 See complete [Parsley.js documentation](http://parsleyjs.org/documentation.html).
 
+## Versions
+
+The gem follows Parley.js's versions. If the gem version is `1.1.10.0`, then `1.1.10` is a version of Parley.js and `0`
+is a patch level of the gem itself.
+
 ## Contributing
 
 1. Fork it
