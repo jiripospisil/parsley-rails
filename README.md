@@ -32,7 +32,7 @@ See the complete [Parsley.js documentation](http://parsleyjs.org/documentation.h
 
 ## Versions
 
-The gem follows Parley.js's versions. If the gem version is `1.1.10.0`, then `1.1.10` is a version of Parley.js and `0`
+The gem follows Parsley.js's versions. If the gem version is `1.1.10.0`, then `1.1.10` is a version of Parsley.js and `0`
 is a patch level of the gem itself.
 
 ## Contributing
