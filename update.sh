@@ -28,4 +28,10 @@ for file in "$RELEASE_PATH/i18n/"*; do
   cp $file "$VENDOR_PATH/$final_name"
 done
 
+for file in "$RELEASE_PATH/l10n/"*; do 
+  base_name=${file##*/}
+  final_name="parsley.l10n.$(echo $base_name | cut -d "." -f2).js"
+  cp $file "$VENDOR_PATH/$final_name"
+done
+
 rm -rf $FILE_NAME $EXTRACT_DIRECTORY
