@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Parsley.js bundled for Rails Asset Pipeline}
   gem.summary       = %q{Parsley.js bundled for Rails Asset Pipeline}
   gem.homepage      = "https://github.com/mekishizufu/parsley-rails"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.require_paths = ["lib"]
