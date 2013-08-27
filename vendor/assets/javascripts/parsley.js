@@ -739,7 +739,11 @@
         } else if ( true === result ) {
           this.constraints[ constraint ].valid = true;
           valid = false !== valid;
-          this.options.listeners.onFieldSuccess( this.element, this.constraints, this );
+
+          // if onFieldSuccess returns (bool) false, consider that field si invalid
+          if (false === this.options.listeners.onFieldSuccess( this.element, this.constraints, this )) {
+            valid = false;
+          }
         }
       }
 
@@ -1173,7 +1177,11 @@
         this.focusedField.focus();
       }
 
-      this.options.listeners.onFormSubmit( valid, event, this );
+      // if onFormSubmit returns (bool) false, form won't be submitted, even if valid
+      var onFormSubmit = this.options.listeners.onFormSubmit( valid, event, this );
+      if ('undefined' !== typeof onFormSubmit) {
+        return onFormSubmit;
+      }
 
       return valid;
     }
@@ -1317,7 +1325,7 @@
       }
     , listeners: {
         onFieldValidate: function ( elem, ParsleyForm ) { return false; } // Executed on validation. Return true to ignore field validation
-      , onFormSubmit: function ( isFormValid, event, ParsleyForm ) {}     // Executed once on form validation
+      , onFormSubmit: function ( isFormValid, event, ParsleyForm ) {}     // Executed once on form validation. Return (bool) false to block submit, even if valid
       , onFieldError: function ( elem, constraints, ParsleyField ) {}     // Executed when a field is detected as invalid
       , onFieldSuccess: function ( elem, constraints, ParsleyField ) {}   // Executed when a field passes validation
     }
