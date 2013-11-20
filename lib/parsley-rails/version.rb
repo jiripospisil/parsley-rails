@@ -1,5 +1,5 @@
 module Parsley
   module Rails
-    VERSION = "1.1.18.0"
+    VERSION = "1.2.0.0"
   end
 end
