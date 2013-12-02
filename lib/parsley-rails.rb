@@ -1,4 +1,4 @@
-require "parsley-rails/version"
+require 'rails/engine'
 
 module Parsley
   module Rails
