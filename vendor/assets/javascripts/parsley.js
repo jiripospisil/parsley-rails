@@ -612,7 +612,7 @@
     */
     , bindHtml5Constraints: function () {
       // add html5 required support + class required support
-      if ( this.$element.hasClass( 'required' ) || this.$element.prop( 'required' ) ) {
+      if ( this.$element.hasClass( 'required' ) || this.$element.attr( 'required' ) ) {
         this.options.required = true;
       }
 
@@ -733,15 +733,9 @@
         this.isRequired = false;
       }
 
-      // if there are no more constraint, destroy parsley instance for this field
+      // if there are no more constraint, reset errors and validation state
       if ( !this.hasConstraints() ) {
-        // in a form context, remove item from parent
-        if ( 'ParsleyForm' === typeof this.getParent() ) {
-          this.getParent().removeItem( this.$element );
-          return;
-        }
-
-        this.destroy();
+        this.UI.reset();
         return;
       }
 
@@ -785,11 +779,11 @@
         this.options.trigger = !this.options.trigger ? 'change' : ' change';
       }
 
-      // alaways bind keyup event, for better UX when a field is invalid
+      // always bind keyup event, for better UX when a field is invalid
       var triggers = ( !this.options.trigger ? '' : this.options.trigger )
         + ( new RegExp( 'key', 'i' ).test( this.options.trigger ) ? '' : ' keyup' );
 
-      // alaways bind change event, for better UX when a select is invalid
+      // always bind change event, for better UX when a select is invalid
       if ( this.$element.is( 'select' ) ) {
         triggers += new RegExp( 'change', 'i' ).test( triggers ) ? '' : ' change';
       }
@@ -1183,7 +1177,7 @@
      // remove eventually already binded events
      this.$element.off( '.' + this.type );
 
-      // alaways bind keyup event, for better UX when a field is invalid
+      // always bind keyup event, for better UX when a field is invalid
       var self = this
         , triggers = ( !this.options.trigger ? '' : this.options.trigger )
         + ( new RegExp( 'change', 'i' ).test( this.options.trigger ) ? '' : ' change' );
@@ -1395,7 +1389,8 @@
   $.fn.parsley = function ( option, fn ) {
     var namespace = { namespace: $( this ).data( 'parsleyNamespace' ) ? $( this ).data( 'parsleyNamespace' ) : ( 'undefined' !== typeof option && 'undefined' !== typeof option.namespace ? option.namespace : $.fn.parsley.defaults.namespace ) }
       , options = $.extend( true, {}, $.fn.parsley.defaults, 'undefined' !== typeof window.ParsleyConfig ? window.ParsleyConfig : {}, option, this.domApi( namespace.namespace ) )
-      , newInstance = null;
+      , newInstance = null
+      , args = Array.prototype.slice.call(arguments, 1);
 
     function bind ( self, type ) {
       var parsleyInstance = $( self ).data( type );
@@ -1421,7 +1416,7 @@
 
       // here is our parsley public function accessor
       if ( 'string' === typeof option && 'function' === typeof parsleyInstance[ option ] ) {
-        var response = parsleyInstance[ option ]( fn );
+        var response = parsleyInstance[ option ].apply( parsleyInstance, args );
 
         return 'undefined' !== typeof response ? response : $( self );
       }
@@ -1445,7 +1440,7 @@
   /* PARSLEY auto-binding
   * =================================================== */
   $( window ).on( 'load', function () {
-    $( '[parsley-validate]' ).each( function () {
+    $( '[parsley-validate], [data-parsley-validate]' ).each( function () {
       $( this ).parsley();
     } );
   } );
@@ -1463,7 +1458,8 @@
 
     for ( var i in this[ 0 ].attributes ) {
       attribute = this[ 0 ].attributes[ i ];
-      if ( attribute.specified && regex.test( attribute.name ) ) {
+
+      if ( null !== attribute && attribute.specified && regex.test( attribute.name ) ) {
         obj[ camelize( attribute.name.replace( namespace, '' ) ) ] = deserializeValue( attribute.value );
       }
     }
