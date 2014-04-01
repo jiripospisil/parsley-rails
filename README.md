@@ -1,6 +1,6 @@
 # Parsley.js for Rails Asset Pipeline
 
-[Parsley.js](https://github.com/guillaumepotier/Parsley.js) is an awesome form validation library ([documentation](http://parsleyjs.org/documentation.html)). 
+[Parsley.js](https://github.com/guillaumepotier/Parsley.js) is an awesome form validation library ([documentation](http://parsleyjs.org/doc/index.html)). 
 This gem makes it easy to use it with Rails Asset Pipeline.
 
 ## Installation
@@ -28,7 +28,7 @@ Finally, if you want to use a different i18n:
 
     //= require parsley.i18n.fr
 
-See the complete [Parsley.js documentation](http://parsleyjs.org/documentation.html).
+See the complete [Parsley.js documentation](http://parsleyjs.org/doc/index.html).
 
 ## Versions
 
