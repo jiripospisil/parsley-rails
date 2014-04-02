@@ -26,7 +26,7 @@ To use the `remote` library, add this right after:
 
 Finally, if you want to use a different i18n:
 
-    //= require parsley/i18n/fr
+    //= require parsley.i18n.fr
 
 See the complete [Parsley.js documentation](http://parsleyjs.org/doc/index.html).
 
