@@ -1,46 +1,33 @@
-/**
-* /!\ This file is just an example template to create/update your own language file /!\
-*/
-
+// ParsleyConfig definition if not already set
 window.ParsleyConfig = window.ParsleyConfig || {};
+window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
 
-(function ($) {
-  window.ParsleyConfig = $.extend( true, {}, window.ParsleyConfig, {
-    messages: {
-      // parsley //////////////////////////////////////
-        defaultMessage: "不正确的值"
-        , type: {
-            email:      "字段值应该是一个正确的电子邮件地址"
-          , url:        "字段值应该是一个正确的URL地址"
-          , urlstrict:  "字段值应该是一个正确的URL地址"
-          , number:     "字段值应该是一个合法的数字"
-          , digits:     "字段值应该是一个单独的数字"
-          , dateIso:    "字段值应该是一个正确的日期描述(YYYY-MM-DD)."
-          , alphanum:   "字段值应该是只包含字母和数字"
-        }
-      , notnull:        "字段值不可为null"
-      , notblank:       "字段值不可为空"
-      , required:       "字段值是必填的"
-      , regexp:         "字段值不合法"
-      , min:            "字段值应该大于 %s"
-      , max:            "字段值应该小于 %s."
-      , range:          "字段值应该大于 %s 并小于 %s."
-      , minlength:      "字段值太短了，长度应该大于等于 %s 个字符"
-      , maxlength:      "字段值太长了，长度应该小于等于 %s 个字符"
-      , rangelength:    "字段值长度错了，长度应该在 %s 和 %s 个字符之间"
-      , mincheck:       "你至少要选择 %s 个选项"
-      , maxcheck:       "你最多只能选择 %s 个选项"
-      , rangecheck:     "你只能选择 %s 到 %s 个选项"
-      , equalto:        "字段值应该和给定的值一样"
+// Define then the messages
+window.ParsleyConfig.i18n.zh_cn = $.extend(window.ParsleyConfig.i18n.zh_cn || {}, {
+  defaultMessage: "不正确的值",
+  type: {
+    email:        "请输入一个有效的电子邮箱地址",
+    url:          "请输入一个有效的链接",
+    number:       "请输入正确的数字",
+    integer:      "请输入正确的整数",
+    digits:       "请输入正确的号码",
+    alphanum:     "请输入字母或数字"
+  },
+  notblank:       "请输入值",
+  required:       "必填项",
+  pattern:        "格式不正确",
+  min:            "输入值请大于或等于 %s",
+  max:            "输入值请小于或等于 %s",
+  range:          "输入值应该在 %s 到 %s 之间",
+  minlength:      "请输入至少 %s 个字符",
+  maxlength:      "请输入至多 %s 个字符",
+  length:         "字符长度应该在 %s 到 %s 之间",
+  mincheck:       "请至少选择 %s 个选项",
+  maxcheck:       "请选择不超过 %s 个选项",
+  check:          "请选择 %s 到 %s 个选项",
+  equalto:        "输入值不同"
+});
 
-      // parsley.extend ///////////////////////////////
-      , minwords:       "字段值应该至少有 %s 个词"
-      , maxwords:       "字段值最多只能有 %s 个词"
-      , rangewords:     "字段值应该有 %s 到 %s 个词"
-      , greaterthan:    "字段值应该大于 %s"
-      , lessthan:       "字段值应该小于 %s"
-      , beforedate:     "字段值所表示的日期应该早于 %s."
-      , afterdate:      "字段值所表示的日期应该晚于 %s."
-    }
-  });
-}(window.jQuery || window.Zepto));
+// If file is loaded after Parsley main file, auto-load locale
+if ('undefined' !== typeof window.ParsleyValidator)
+  window.ParsleyValidator.addCatalog('zh_cn', window.ParsleyConfig.i18n.zh_cn, true);

@@ -3,7 +3,7 @@
 set -e
 
 if [ $# -eq 0 ]; then
-  echo "No tag supplied. Usage: ./update.sh 1.1.10"
+  echo "No tag supplied. Usage: ./update.sh 2.0.0-rc5"
   exit 1
 fi
 
@@ -19,19 +19,14 @@ wget -O $FILE_NAME $RELEASE_URL
 mkdir $EXTRACT_DIRECTORY
 tar xfz $FILE_NAME -C $EXTRACT_DIRECTORY
 
-cp "$RELEASE_PATH/parsley.js" $VENDOR_PATH
-cp "$RELEASE_PATH/parsley.extend.js" $VENDOR_PATH
+cp "$RELEASE_PATH/dist/parsley.js" $VENDOR_PATH
+cp "$RELEASE_PATH/dist/parsley.remote.js" $VENDOR_PATH
 
-for file in "$RELEASE_PATH/i18n/"*; do 
-  base_name=${file##*/}
-  final_name="parsley.i18n.$(echo $base_name | cut -d "." -f2).js"
+for file in "$RELEASE_PATH/src/i18n/"*; do
+  base_name=$(basename "$file")
+  final_name="parsley.i18n.$(echo $base_name)"
   cp $file "$VENDOR_PATH/$final_name"
 done
 
-for file in "$RELEASE_PATH/l10n/"*; do 
-  base_name=${file##*/}
-  final_name="parsley.l10n.$(echo $base_name | cut -d "." -f2).js"
-  cp $file "$VENDOR_PATH/$final_name"
-done
 
 rm -rf $FILE_NAME $EXTRACT_DIRECTORY

@@ -1,40 +1,33 @@
+// ParsleyConfig definition if not already set
 window.ParsleyConfig = window.ParsleyConfig || {};
+window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
 
-(function ($) {
-  window.ParsleyConfig = $.extend( true, {}, window.ParsleyConfig, {
-    messages: {
-      // parsley ////////PL/by/Tymek.Cz////////////////
-        defaultMessage: "Wartość nieprawidłowa"
-      , type: {
-            email:      "Niepoprawny adres e-mail"
-          , url:        "Niepoprawny adres URL"
-          , urlstrict:  "Niepoprawny format adresu adres URL"
-          , number:     "Wpisz poprawną liczbę"
-          , digits:     "Dozwolone tylko cyfry"
-          , dateIso:    "Niepoprawny format  (użyj RRRR-MM-DD)"
-          , alphanum:   "Dozwolone tylko znaki alfanumeryczne"
-        }
-      , notnull:        "Wartość nie może być równa zero"
-      , notblank:       "Pole nie może pozostać puste"
-      , required:       "Pole wymagane"
-      , regexp:         "Niepoprawna wartość"
-      , min:            "Wpisz wartość większą od %s"
-      , max:            "Wpisz wartość mniejszą od %s"
-      , range:          "Wpisz wartość pomiędzy %s i %s"
-      , minlength:      "Wpisz %s lub więcej znaków"
-      , maxlength:      "Wpisz %s lub mniej znaków"
-      , rangelength:    "Wpisz od %s do %s znaków"
-      , mincheck:       "Wybierz %s lub więcej opcji"
-      , maxcheck:       "Wybierz %s lub mniej opcji"
-      , rangecheck:     "Wybierz od %s do %s opcji"
-      , equalto:        "Wartość nie jest identyczna"
+// Define then the messages
+window.ParsleyConfig.i18n.pl = $.extend(window.ParsleyConfig.i18n.pl || {}, {
+  defaultMessage: "Wartość wygląda na nieprawidłową",
+  type: {
+    email:        "Wpisz poprawny adres e-mail.",
+    url:          "Wpisz poprawny adres URL.",
+    number:       "Wpisz poprawną liczbę.",
+    integer:      "Dozwolone jedynie liczby człkowite.",
+    digits:       "Dozwolone jedynie cyfry.",
+    alphanum:     "Dozwolone jedynie znaki alfanumeryczne."
+  },
+  notblank:       "Pole nie może zostać puste",
+  required:       "Pole jest wymagane.",
+  pattern:        "Wartość wygląda na nieprawidłową.",
+  min:            "Wartość powinna być większa od %s.",
+  max:            "Wartość powinna być mniejsza od %s.",
+  range:          "Wartość powinna być większa od %s i mniejsza od %s.",
+  minlength:      "Ilość znaków powinna wynosić %s lub więcej.",
+  maxlength:      "Ilość znaków powinna wynosić %s lub mniej.",
+  length:         "Ilość znaków powinna wynosić od %s do %s.",
+  mincheck:       "Musisz wybrać minimum %s opcji.",
+  maxcheck:       "Możesz wybrać maksymalnie %s opcji.",
+  check:          "Minimalnie możesz wybrać od %s do %s opcji",
+  equalto:        "Wartości nie są identyczne"
+});
 
-      // parsley.extend /PL/by/Tymek.Cz////////////////
-      , minwords:       "Wpisz więcej niż %s wyrazów"
-      , maxwords:       "Wpisz co najwyżej %s wyrazów"
-      , rangewords:     "Wpisz od %s do %s wyrazów"
-      , greaterthan:    "Podaj wartość większą od %s"
-      , lessthan:       "Podaj wartość mniejszą od %s"
-    }
-  });
-}(window.jQuery || window.Zepto));
+// If file is loaded after Parsley main file, auto-load locale
+if ('undefined' !== typeof window.ParsleyValidator)
+  window.ParsleyValidator.addCatalog('pl', window.ParsleyConfig.i18n.pl, true);
