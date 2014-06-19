@@ -1,4 +1,4 @@
-# Parsley.js 2.0.0 for Rails Asset Pipeline
+# Parsley.js for Rails Asset Pipeline
 
 [Parsley.js](https://github.com/guillaumepotier/Parsley.js) is an awesome form validation library ([documentation](http://parsleyjs.org/doc/index.html)).
 This gem makes it easy to use it with Rails Asset Pipeline.
