@@ -25,6 +25,8 @@ To use the `remote` library or a different i18n, add this right after:
     //= require parsley.remote
     //= require parsley.i18n.fr
 
+Note that in order to use the Russian i18n and avoid bumping into [sstephenson/sprockets#529](https://github.com/sstephenson/sprockets/issues/529), you need to append `.js` to the filename (`parsley.i18n.ru.js`).
+
 Finally, if you want to use the default CSS, add the following to your
 `app/assets/stylesheets/application.css`:
 
