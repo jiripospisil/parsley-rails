@@ -32,6 +32,15 @@ Finally, if you want to use the default CSS, add the following to your
 
     *= require parsley
 
+## Sass Support
+
+If you prefer SCSS, add this to your application.css.scss file:
+
+    @import 'parsley';
+
+If you use the Sass indented syntax, add this to your application.css.sass file:
+
+    @import parsley
 
 See the complete [Parsley.js documentation](http://parsleyjs.org/doc/index.html).
 
