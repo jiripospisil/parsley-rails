@@ -3,7 +3,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
 window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
 
 // Define then the messages
-window.ParsleyConfig.i18n.cs = $.extend(window.ParsleyConfig.i18n.cs || {}, {
+window.ParsleyConfig.i18n.cs = jQuery.extend(window.ParsleyConfig.i18n.cs || {}, {
   defaultMessage: "Tato položka je neplatná.",
   type: {
     email:        "Tato položka musí být e-mailová adresa.",
@@ -16,8 +16,8 @@ window.ParsleyConfig.i18n.cs = $.extend(window.ParsleyConfig.i18n.cs || {}, {
   notblank:       "Tato položka nesmí být prázdná.",
   required:       "Tato položka je povinná.",
   pattern:        "Tato položka je neplatná.",
-  min:            "Tato položka musí být menší nebo rovna %s.",
-  max:            "Tato položka musí být větší nebo rovna %s.",
+  min:            "Tato položka musí být větší nebo rovna %s.",
+  max:            "Tato položka musí být menší nebo rovna %s.",
   range:          "Tato položka musí být v rozsahu od %s do %s.",
   minlength:      "Tato položka musí mít nejméně %s znaků.",
   maxlength:      "Tato položka musí mít nejvíce %s znaků.",

@@ -3,7 +3,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
 window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
 
 // Define then the messages
-window.ParsleyConfig.i18n.da = $.extend(window.ParsleyConfig.i18n.da || {}, {
+window.ParsleyConfig.i18n.da = jQuery.extend(window.ParsleyConfig.i18n.da || {}, {
   defaultMessage: "Indtast venligst en korrekt værdi.",
   type: {
     email:        "Indtast venligst en korrekt emailadresse.",
@@ -31,4 +31,3 @@ window.ParsleyConfig.i18n.da = $.extend(window.ParsleyConfig.i18n.da || {}, {
 // If file is loaded after Parsley main file, auto-load locale
 if ('undefined' !== typeof window.ParsleyValidator)
   window.ParsleyValidator.addCatalog('da', window.ParsleyConfig.i18n.da, true);
-  
