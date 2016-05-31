@@ -1,15 +1,13 @@
-// ParsleyConfig definition if not already set
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+import Parsley from '../parsley';
 
-// Define then the messages
-window.ParsleyConfig.i18n.ko = $.extend(window.ParsleyConfig.i18n.ko || {}, {
+Parsley.addMessages('ko', {
   defaultMessage: "입력하신 내용이 올바르지 않습니다.",
   type: {
     email:        "입력하신 이메일이 유효하지 않습니다.",
     url:          "입력하신 URL이 유효하지 않습니다.",
     number:       "입력하신 전화번호가 올바르지 않습니다.",
-    integer:      "입력하신 URL이 유효하지 않습니다.",
+    integer:      "입력하신 정수가 유효하지 않습니다.",
     digits:       "숫자를 입력하여 주십시오.",
     alphanum:     "입력하신 내용은 알파벳과 숫자의 조합이어야 합니다."
   },
@@ -28,6 +26,4 @@ window.ParsleyConfig.i18n.ko = $.extend(window.ParsleyConfig.i18n.ko || {}, {
   equalto:        "같은 값을 입력하여 주십시오."
 });
 
-// If file is loaded after Parsley main file, auto-load locale
-if ('undefined' !== typeof window.ParsleyValidator)
-  window.ParsleyValidator.addCatalog('ko', window.ParsleyConfig.i18n.ko, true);
+Parsley.setLocale('ko');
