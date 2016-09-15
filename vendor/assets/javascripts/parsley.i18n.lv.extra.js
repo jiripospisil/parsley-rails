@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('lv', {
   dateiso:  "Šai vērtībai jābūt korekti noformētam datumam (YYYY-MM-DD).",

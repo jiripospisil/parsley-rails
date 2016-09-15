@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('hu', {
   dateiso:  "A mező értéke csak érvényes dátum lehet (YYYY-MM-DD).",

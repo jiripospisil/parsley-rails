@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('ms', {
   dateiso:  "Nilai hendaklah berbentuk tarikh yang sah (YYYY-MM-DD).",

@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley/main';
+
 
 Parsley.addMessages('al', {
   defaultMessage: "Kjo vlerë është invalide.",

@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('ca', {
   defaultMessage: "Aquest valor sembla ser invàlid.",

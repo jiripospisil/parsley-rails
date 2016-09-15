@@ -1,5 +1,5 @@
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('he', {
   dateiso: "ערך זה צריך להיות תאריך בפורמט (YYYY-MM-DD)."

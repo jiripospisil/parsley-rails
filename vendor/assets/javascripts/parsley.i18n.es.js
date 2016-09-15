@@ -1,6 +1,6 @@
 // ParsleyConfig definition if not already set
 // Validation errors messages for Parsley
-import Parsley from '../parsley';
+// Load this after Parsley
 
 Parsley.addMessages('es', {
   defaultMessage: "Este valor parece ser inválido.",
