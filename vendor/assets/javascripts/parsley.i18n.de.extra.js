@@ -1,7 +1,7 @@
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+// Load this after Parsley
 
-window.ParsleyConfig.i18n.de = $.extend(window.ParsleyConfig.i18n.de || {}, {
+Parsley.addMessages('de', {
   dateiso:  "Die Eingabe muss ein gültiges Datum sein (YYYY-MM-DD).",
   minwords: "Die Eingabe ist zu kurz. Sie muss aus %s oder mehr Wörtern bestehen.",
   maxwords: "Die Eingabe ist zu lang. Sie muss aus %s oder weniger Wörtern bestehen.",

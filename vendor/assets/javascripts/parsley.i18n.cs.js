@@ -1,9 +1,7 @@
-// ParsleyConfig definition if not already set
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+// Load this after Parsley
 
-// Define then the messages
-window.ParsleyConfig.i18n.cs = $.extend(window.ParsleyConfig.i18n.cs || {}, {
+Parsley.addMessages('cs', {
   defaultMessage: "Tato položka je neplatná.",
   type: {
     email:        "Tato položka musí být e-mailová adresa.",
@@ -16,8 +14,8 @@ window.ParsleyConfig.i18n.cs = $.extend(window.ParsleyConfig.i18n.cs || {}, {
   notblank:       "Tato položka nesmí být prázdná.",
   required:       "Tato položka je povinná.",
   pattern:        "Tato položka je neplatná.",
-  min:            "Tato položka musí být menší nebo rovna %s.",
-  max:            "Tato položka musí být větší nebo rovna %s.",
+  min:            "Tato položka musí být větší nebo rovna %s.",
+  max:            "Tato položka musí být menší nebo rovna %s.",
   range:          "Tato položka musí být v rozsahu od %s do %s.",
   minlength:      "Tato položka musí mít nejméně %s znaků.",
   maxlength:      "Tato položka musí mít nejvíce %s znaků.",
@@ -28,6 +26,4 @@ window.ParsleyConfig.i18n.cs = $.extend(window.ParsleyConfig.i18n.cs || {}, {
   equalto:        "Tato položka musí být stejná."
 });
 
-// If file is loaded after Parsley main file, auto-load locale
-if ('undefined' !== typeof window.ParsleyValidator)
-  window.ParsleyValidator.addCatalog('cs', window.ParsleyConfig.i18n.cs, true);
+Parsley.setLocale('cs');

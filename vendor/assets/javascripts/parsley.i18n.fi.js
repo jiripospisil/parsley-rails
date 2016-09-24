@@ -1,9 +1,7 @@
-// ParsleyConfig definition if not already set
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+// Load this after Parsley
 
-// Define then the messages
-window.ParsleyConfig.i18n.fi = $.extend(window.ParsleyConfig.i18n.fi || {}, {
+Parsley.addMessages('fi', {
   defaultMessage: "Sy&ouml;tetty arvo on virheellinen.",
   type: {
     email:        "S&auml;hk&ouml;postiosoite on virheellinen.",
@@ -16,7 +14,7 @@ window.ParsleyConfig.i18n.fi = $.extend(window.ParsleyConfig.i18n.fi || {}, {
   notblank:       "T&auml;m&auml; kentt&auml;&auml; ei voi j&auml;tt&auml;&auml; tyhj&auml;ksi.",
   required:       "T&auml;m&auml; kentt&auml; on pakollinen.",
   pattern:        "Sy&ouml;tetty arvo on virheellinen.",
-  min:            "Sy&ouml;t&auml; arvo joka on yht&auml; suuri tai suurempi kuin  %s.",
+  min:            "Sy&ouml;t&auml; arvo joka on yht&auml; suuri tai suurempi kuin %s.",
   max:            "Sy&ouml;t&auml; arvo joka on pienempi tai yht&auml; suuri kuin %s.",
   range:          "Sy&ouml;t&auml; arvo v&auml;lilt&auml;: %s-%s.",
   minlength:      "Sy&ouml;tetyn arvon t&auml;ytyy olla v&auml;hint&auml;&auml;n %s merkki&auml; pitk&auml;.",
@@ -28,6 +26,4 @@ window.ParsleyConfig.i18n.fi = $.extend(window.ParsleyConfig.i18n.fi || {}, {
   equalto:        "Salasanat eiv&auml;t t&auml;sm&auml;&auml;."
 });
 
-// If file is loaded after Parsley main file, auto-load locale
-if ('undefined' !== typeof window.ParsleyValidator)
-  window.ParsleyValidator.addCatalog('fi', window.ParsleyConfig.i18n.fi, true);
+Parsley.setLocale('fi');

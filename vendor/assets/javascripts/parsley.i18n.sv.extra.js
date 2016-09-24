@@ -1,6 +1,6 @@
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+// Load this after Parsley
 
-window.ParsleyConfig.i18n.sv = $.extend(window.ParsleyConfig.i18n.sv || {}, {
+Parsley.addMessages('sv', {
   dateiso: "Ange ett giltigt datum (ÅÅÅÅ-MM-DD)."
 });

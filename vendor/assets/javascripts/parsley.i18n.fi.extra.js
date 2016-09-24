@@ -1,6 +1,6 @@
-window.ParsleyConfig = window.ParsleyConfig || {};
-window.ParsleyConfig.i18n = window.ParsleyConfig.i18n || {};
+// Validation errors messages for Parsley
+// Load this after Parsley
 
-window.ParsleyConfig.i18n.fi = $.extend(window.ParsleyConfig.i18n.fi || {}, {
+Parsley.addMessages('fi', {
   dateiso: "Sy&ouml;t&auml; oikea p&auml;iv&auml;m&auml;&auml;r&auml; (YYYY-MM-DD)."
 });
