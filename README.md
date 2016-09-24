@@ -20,12 +20,10 @@ Add the following to your `app/assets/javascripts/application.js`:
     //= require jquery
     //= require parsley
 
-To use the `remote` library or a different i18n, add this right after:
+To use a different i18n, add this right after:
 
     //= require parsley.remote
     //= require parsley.i18n.fr
-
-Note that in order to use the Russian i18n and avoid bumping into [sstephenson/sprockets#529](https://github.com/sstephenson/sprockets/issues/529), you need to append `.js` to the filename (`parsley.i18n.ru.js`).
 
 Finally, if you want to use the default CSS, add the following to your
 `app/assets/stylesheets/application.css`:
@@ -46,8 +44,8 @@ See the complete [Parsley.js documentation](http://parsleyjs.org/doc/index.html)
 
 ## Versions
 
-The gem follows Parsley.js' versions. If the gem version is `2.0.0.0`, then `2.0.0` is the version of Parsley.js and `0`
-is the patch level of the gem itself.
+The gem follows Parsley.js' versions. If the gem's version is `2.0.0.0`, then `2.0.0` is a version of Parsley.js and `0`
+is a patch level of the gem itself.
 
 ## Contributing
 
