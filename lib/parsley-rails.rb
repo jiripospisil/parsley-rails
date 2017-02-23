@@ -6,6 +6,10 @@ module Parsley
       elsif sprockets?
         register_sprockets
       end
+      
+      if sass?
+        configure_sass
+      end
     end
 
     # Paths
@@ -34,7 +38,16 @@ module Parsley
       defined?(::Rails)
     end
 
+    def sass?
+      defined?(::Sass)
+    end
+
     private
+
+    def configure_sass
+      require 'sass'
+      ::Sass.load_paths << stylesheets_path
+    end
 
     def register_rails_engine
       require 'parsley-rails/engine'
