@@ -20,8 +20,11 @@ wget -O $FILE_NAME $RELEASE_URL
 mkdir $EXTRACT_DIRECTORY
 tar xfz $FILE_NAME -C $EXTRACT_DIRECTORY
 
+# Copy the base distribution
 cp "$RELEASE_PATH/dist/parsley.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/dist/parsley.js.map" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/dist/parsley.min.js" $VENDOR_JS_PATH
+cp "$RELEASE_PATH/dist/parsley.min.js.map" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/src/parsley.css" $VENDOR_CSS_PATH
 
 for file in "$RELEASE_PATH/dist/i18n/"*; do
