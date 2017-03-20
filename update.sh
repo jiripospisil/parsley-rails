@@ -28,7 +28,6 @@ cp "$RELEASE_PATH/dist/parsley.min.js.map" $VENDOR_JS_PATH
 cp "$RELEASE_PATH/src/parsley.css" $VENDOR_CSS_PATH
 
 # Copy extras
-cp "$RELEASE_PATH/src/extra/plugin/bind.js" "$VENDOR_JS_PATH/parsley.plugin.bind.js"
 cp "$RELEASE_PATH/src/extra/validator/comparison.js" "$VENDOR_JS_PATH/parsley.validator.comparison.js"
 cp "$RELEASE_PATH/src/extra/validator/dateiso.js" "$VENDOR_JS_PATH/parsley.validator.dateiso.js"
 cp "$RELEASE_PATH/src/extra/validator/luhn.js" "$VENDOR_JS_PATH/parsley.validator.luhn.js"
