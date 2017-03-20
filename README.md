@@ -22,7 +22,6 @@ Add the following to your `app/assets/javascripts/application.js`:
 
 To use a different i18n, add this right after:
 
-    //= require parsley.remote
     //= require parsley.i18n.fr
 
 Finally, if you want to use the default CSS, add the following to your
