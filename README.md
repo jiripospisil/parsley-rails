@@ -22,7 +22,6 @@ Add the following to your `app/assets/javascripts/application.js`:
 
 To use a different i18n, add this right after:
 
-    //= require parsley.remote
     //= require parsley.i18n.fr
 
 Finally, if you want to use the default CSS, add the following to your
@@ -54,3 +53,8 @@ is a patch level of the gem itself.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+Note that there's a script (./update.sh 2.6.5) for automatic update from the
+official distribution. Unfortunately the files in the "extras" are not part of
+the distribution and thus are not transpiled. And since I'm too lazy to
+reliably script it, it's necessary to modify some of the files (`comparison.js`
+as of now) and remove the offending lines.
