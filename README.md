@@ -23,6 +23,8 @@ Add the following to your `app/assets/javascripts/application.js`:
 To use a different i18n, add this right after:
 
     //= require parsley.i18n.fr
+    
+Note that 'ru' (russian) localisation should ends with '.js' (`//= require parsley.i18n.ru.js`) to prevent [parsing error](https://github.com/sstephenson/sprockets/issues/529).
 
 Finally, if you want to use the default CSS, add the following to your
 `app/assets/stylesheets/application.css`:
